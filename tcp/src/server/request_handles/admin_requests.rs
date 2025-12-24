@@ -17,43 +17,40 @@ use lib_db::types::PgPool;
 use serde::{Deserialize, Serialize};
 use tokio::{io::AsyncReadExt, net::TcpStream};
 use tokio_rustls::TlsStream;
-
-#[derive(Clone, Deserialize, Serialize)]
-struct STATS {
-    pid: String,
-    uptime: Duration,
-    n_get_requests: u64,
-    no_tls_status: bool,
-    storage_usage: usize,
-    network_usage: usize,
-    n_post_requests: u64,
-    failed_requests: u64,
-    allow_new_users: bool,
-    n_current_requests: u64,
-    invalid_tls_reqests: u64,
-    successful_requests: u64,
-}
+//
+// #[derive(Clone, Deserialize, Serialize)]
+// struct STATS {
+//     pid: String,
+//     uptime: Duration,
+//     n_get_requests: u64,
+//     no_tls_status: bool,
+//     storage_usage: usize,
+//     network_usage: usize,
+//     n_post_requests: u64,
+//     failed_requests: u64,
+//     allow_new_users: bool,
+//     n_current_requests: u64,
+//     invalid_tls_reqests: u64,
+//     successful_requests: u64,
+// }
 
 
 
 #[derive(Clone, Deserialize, Serialize)]
 pub enum ADMINREQS {
     STATS {
-        all: Obool,
-        pid: Obool,
-        uptime: Obool,
-        no_tls_status: Obool,
-        storage_usage: Obool,
-        network_usage: Obool,
-        n_get_requests: Obool,
-        list_all_files: Obool,
-        n_post_requests: Obool,
-        failed_requests: Obool,
-        allow_new_users: Obool,
-        list_current_users: Obool,
-        n_current_requests: Obool,
-        invalid_tls_reqests: Obool,
-        successful_requests: Obool,
+        pid: u64,
+        uptime: Duration,
+        no_tls_status: bool,
+        storage_usage: u128,
+        network_usage: u128,
+        n_get_requests: u64,
+        n_post_requests: u64,
+        failed_requests: u64,
+        allow_new_users: bool,
+        n_current_requests: u64,
+        invalid_tls_reqests: u64,
+        successful_requests: u64,
     },
 
     SERVER {
