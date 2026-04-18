@@ -154,8 +154,8 @@ async fn file_checker(
     }
     let end = start.elapsed();
     
-    if 0 == added {info!("FILECHECKER: added {added} files from server")};
-    if 0 == deleted {info!("FILECHECKER: deleted {deleted} files server")};
+    if 0 != added {info!("FILECHECKER: added {added} files from server")};
+    if 0 != deleted {info!("FILECHECKER: deleted {deleted} files server")};
     info!("FILECHECKER: finished in {}ms", end.as_millis());
 }
 

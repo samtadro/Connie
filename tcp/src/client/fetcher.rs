@@ -222,7 +222,6 @@ async fn notls_fetcher_helper(
     stream.write_u8(FETCH).await?;
     stream.write_all(&request).await?;
 
-    debug!("sent {}",request.len());
     stream.flush().await?;
     let items = stream.read_u16().await.unwrap();
     let mut media_from_server: Vec<Smedia> = vec![];
