@@ -106,8 +106,8 @@ async fn pub_file_checker(
     }
     let end = start.elapsed();
     
-    if 0 == added {info!("PUBFILECHECKER: added {added} files from server")};
-    if 0 == deleted {info!("PUBFILECHECKER: deleted {deleted} files server")};
+    if 0 != added {info!("PUBFILECHECKER: added {added} files from server")};
+    if 0 != deleted {info!("PUBFILECHECKER: deleted {deleted} files server")};
     info!("PUBFILECHECKER: finished in {}ms", end.as_millis());
 }
 
