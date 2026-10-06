@@ -12,7 +12,7 @@ sqlx = { version = "0.8.2", features = [
   "macros",
 ] }
 common_lib = { path = "../common_lib/" }
-jsonwebtoken = "10.3.0"
+jsonwebtoken = "11.1.0"
 serde = { version = "1.0", features = ["derive"] }
 
 tokio = { version = "1.43.0", features = ["fs", "rt-multi-thread"] }

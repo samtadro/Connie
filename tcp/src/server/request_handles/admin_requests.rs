@@ -80,7 +80,7 @@ impl ADMINREQS {
 // blue prints to the server admin function
 async fn handle_admin(
     mut stream: TlsStream<TcpStream>,  
-    pool: &PgPool,
+    _pool: &PgPool,
 ) -> io::Result<()> {
 
     let request_type = stream.read_u16().await?;
